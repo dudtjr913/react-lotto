@@ -1,0 +1,281 @@
+@import url(https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700;900&display=swap);
+.d-none {
+  display: none;
+}
+
+.d-flex {
+  display: flex;
+}
+
+
+
+:root {
+  --color-pink-1: rgb(255, 154, 179);
+  --color-pink-2: rgb(255, 128, 159);
+  --color-pink-3: rgb(243, 102, 137); }
+
+* {
+  box-sizing: border-box; }
+
+body {
+  font-family: 'Noto Sans KR', sans-serif; }
+
+#root {
+  margin: 0 auto;
+  max-width: 550px; }
+
+button {
+  cursor: pointer;
+  font-family: inherit; }
+
+p {
+  margin: 0; }
+
+ul {
+  padding: 0; }
+
+li {
+  list-style: none; }
+
+.PriceForm {
+  margin-bottom: 2rem; }
+  .PriceForm .price-form {
+    display: flex; }
+    .PriceForm .price-form > * {
+      display: flex;
+      flex-direction: column; }
+    .PriceForm .price-form .price-label {
+      flex-grow: 1; }
+      .PriceForm .price-form .price-label .price-text {
+        font-size: 1.2rem;
+        font-weight: 500;
+        margin-bottom: 0.5rem; }
+      .PriceForm .price-form .price-label .price-input {
+        height: 50px;
+        font-size: 1rem;
+        padding: 0 1rem;
+        border: 1px solid #aaa;
+        border-radius: 5px; }
+    .PriceForm .price-form .price-submit-btn-box {
+      justify-content: flex-end; }
+      .PriceForm .price-form .price-submit-btn-box .price-submit-btn {
+        height: 50px;
+        padding: 0 1.5rem;
+        margin-left: 15px;
+        border: 0;
+        border-radius: 5px;
+        background-color: var(--color-pink-1);
+        font-size: 1rem; }
+        .PriceForm .price-form .price-submit-btn-box .price-submit-btn:hover {
+          background-color: var(--color-pink-3); }
+
+.LottoTicket {
+  display: flex;
+  align-items: center; }
+  .LottoTicket .lotto-ticket-emoji {
+    font-size: 2rem;
+    padding: 0 0.5rem; }
+  .LottoTicket > p {
+    font-size: 1.2rem;
+    margin-left: 1rem; }
+
+.PurchasedLotto {
+  margin-bottom: 2rem; }
+  .PurchasedLotto ul {
+    max-height: 35vh;
+    overflow-y: auto; }
+  .PurchasedLotto li {
+    margin: 0 auto; }
+  .PurchasedLotto .switch {
+    position: relative;
+    float: right; }
+    .PurchasedLotto .switch .switch-input {
+      appearance: none;
+      -moz-appearance: none;
+      -webkit-appearance: none;
+      position: absolute; }
+    .PurchasedLotto .switch span {
+      display: inline-block;
+      width: 100%;
+      cursor: pointer; }
+      .PurchasedLotto .switch span::before {
+        content: '';
+        float: right;
+        display: block;
+        margin: 5px 0 5px 10px;
+        border-radius: 7px;
+        width: 36px;
+        height: 14px;
+        background-color: white;
+        -moz-box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
+        -webkit-box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
+        box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.2);
+        transition: background-color 0.2s, opacity 0.2s; }
+      .PurchasedLotto .switch span::after {
+        content: '';
+        position: absolute;
+        top: 2px;
+        right: 16px;
+        border-radius: 50%;
+        width: 20px;
+        height: 20px;
+        background-color: white;
+        box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2), 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+        transition: background-color 0.2s, transform 0.2s; }
+    .PurchasedLotto .switch .switch-input:checked + span::after {
+      background-color: var(--color-pink-2);
+      transform: translateX(16px); }
+  .PurchasedLotto .hide-number {
+    display: grid;
+    grid-template-columns: repeat(10, 10%); }
+  .PurchasedLotto ::-webkit-scrollbar {
+    width: 10px; }
+  .PurchasedLotto ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 10px; }
+  .PurchasedLotto ::-webkit-scrollbar-thumb {
+    background: #b8b8b8;
+    border-radius: 10px; }
+  .PurchasedLotto ::-webkit-scrollbar-thumb:hover {
+    background: #979797; }
+
+.ResultModal {
+  display: flex;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 2; }
+  .ResultModal .modal-inner {
+    width: 500px;
+    max-height: 80vh;
+    margin: auto;
+    padding: 4rem 3rem;
+    overflow: auto;
+    background: #fff;
+    border-radius: 5px;
+    position: relative;
+    text-align: center;
+    white-space: nowrap; }
+    .ResultModal .modal-inner .modal-close {
+      margin: 25px;
+      width: 25px;
+      position: absolute;
+      right: 10px;
+      top: 10px;
+      cursor: pointer;
+      border: 0;
+      background-color: transparent;
+      padding: 0; }
+      .ResultModal .modal-inner .modal-close .close-x {
+        stroke: gray;
+        fill: transparent;
+        stroke-linecap: round;
+        stroke-width: 5; }
+    .ResultModal .modal-inner table {
+      margin: 0 auto 2rem auto;
+      border-collapse: collapse; }
+      .ResultModal .modal-inner table tr {
+        border-bottom: 1px solid #999; }
+        .ResultModal .modal-inner table tr th,
+        .ResultModal .modal-inner table tr td {
+          padding: 0.7rem 1.5rem; }
+      .ResultModal .modal-inner table thead > tr {
+        border-bottom: 2px solid #666; }
+    .ResultModal .modal-inner .rate-of-return-message {
+      margin-bottom: 1.5rem;
+      font-weight: 500;
+      font-size: 1.2rem; }
+    .ResultModal .modal-inner .restart-btn {
+      width: 100%;
+      height: 50px;
+      border: 0;
+      border-radius: 5px;
+      background-color: var(--color-pink-1);
+      font-size: 1rem; }
+      .ResultModal .modal-inner .restart-btn:hover {
+        background-color: var(--color-pink-3); }
+
+.WinningNumberInput {
+  position: relative;
+  /* Firefox */ }
+  .WinningNumberInput span {
+    position: absolute;
+    clip: rect(0, 0, 0, 0); }
+  .WinningNumberInput input {
+    width: 60px;
+    height: 60px;
+    border: 2px solid #aaa;
+    border-radius: 50%;
+    text-align: center;
+    font-size: 1.2rem; }
+  .WinningNumberInput input::-webkit-outer-spin-button,
+  .WinningNumberInput input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0; }
+  .WinningNumberInput input[type='number'] {
+    -moz-appearance: textfield; }
+  .WinningNumberInput input:focus {
+    outline: none;
+    border-color: var(--color-pink-3);
+    box-shadow: 0 0 0 1px var(--color-pink-3); }
+
+.WinningNumberForm h2 {
+  font-size: 1.2rem;
+  font-weight: 500; }
+
+.WinningNumberForm h3 {
+  font-size: 1rem;
+  text-align: center;
+  white-space: nowrap; }
+
+.WinningNumberForm .number-input-box {
+  display: flex;
+  justify-content: space-between; }
+  .WinningNumberForm .number-input-box .numbers-box {
+    margin: 0 auto; }
+  .WinningNumberForm .number-input-box .bonus-number-box {
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+
+.WinningNumberForm ul {
+  display: flex;
+  margin-bottom: 0.5rem; }
+  .WinningNumberForm ul li {
+    margin-right: 0.7rem; }
+  .WinningNumberForm ul li:last-child {
+    margin-right: 0; }
+
+.WinningNumberForm .check-message {
+  font-size: 0.9rem;
+  margin-left: 1rem; }
+  .WinningNumberForm .check-message .success {
+    color: green; }
+  .WinningNumberForm .check-message .failure {
+    color: red; }
+
+.WinningNumberForm .winning-number-submit-btn {
+  font-size: 1rem;
+  width: 100%;
+  height: 50px;
+  border: 0;
+  border-radius: 5px;
+  margin-top: 1.5rem;
+  background-color: var(--color-pink-1); }
+  .WinningNumberForm .winning-number-submit-btn:disabled {
+    background-color: #bbb;
+    color: #555;
+    cursor: not-allowed; }
+  .WinningNumberForm .winning-number-submit-btn:disabled:hover {
+    background-color: #bbb; }
+  .WinningNumberForm .winning-number-submit-btn:hover {
+    background-color: var(--color-pink-3); }
+
+.lotto-header {
+  text-align: center;
+  margin: 3rem 0 2rem 0; }
+
